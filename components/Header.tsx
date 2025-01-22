@@ -1,11 +1,16 @@
 import Link from "next/link";
+import Navigation from "./Navigation";
+
+const navItems = [
+  { href: "/", label: "Home" },
+  { href: "/blog", label: "Blog" },
+  { href: "/about", label: "About" },
+];
 
 const TheHeader = () => {
   return (
     <header className="container">
-      <Link href="/">Home</Link>
-      <Link href="/blog">Blog</Link>
-      <Link href="/about">About</Link>
+      <Navigation navLinks={navItems} />
     </header>
   );
 };

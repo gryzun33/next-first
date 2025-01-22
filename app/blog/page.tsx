@@ -2,8 +2,9 @@
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import getAllPosts from "../services/getAllPosts";
+import { getAllPosts } from "../services/getAllPosts";
 import { Posts } from "@/components/Posts";
+import { PostSearch } from "@/components/PostSearch";
 
 // async function getData() {
 //   const response = await fetch("https://jsonplaceholder.typicode.com/posts", {
@@ -33,6 +34,7 @@ export default function Blog() {
   return (
     <div>
       <h1>Blog page</h1>
+      <PostSearch onSearch={setPosts} />
       {loading ? <h3>Loading...</h3> : <Posts posts={posts} />}
     </div>
   );
